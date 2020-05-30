@@ -208,7 +208,7 @@
     .logo {
       min-width: 45px;
     }
-    .logi img {
+    .logo img {
       margin: 0;
     }
   }
