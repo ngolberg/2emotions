@@ -3754,7 +3754,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".logo[data-v-374685a9] {\n  min-width: 59px;\n}\n.logo img[data-v-374685a9] {\n  height: 100%;\n}\n.form-wrapper[data-v-374685a9] {\n  flex-grow: 100;\n}\n.h-12[data-v-374685a9] {\n  height: 3.6rem;\n}\n.mobile-footer[data-v-374685a9] {\n  box-shadow:         0px -2px 5px 0px rgba(50, 50, 50, 0.27);\n}\n.menu a[data-v-374685a9] {\n  border-bottom: 2px solid #fff;\n}\n.menu a[data-v-374685a9]:not(.router-link-exact-active):hover {\n  border-bottom: 2px solid #f7fafc;\n}\n.menu .router-link-exact-active[data-v-374685a9] {\n  border-bottom: 2px solid #000;\n}\n.bottom-menu >div[data-v-374685a9] {\n  text-align: right;\n  width: 100%;\n}\n.bottom-menu >div[data-v-374685a9]:first-child {\n  text-align: left;\n}\n", ""]);
+exports.push([module.i, ".logo[data-v-374685a9] {\n  min-width: 59px;\n}\n.logo img[data-v-374685a9] {\n  height: 100%;\n}\n.form-wrapper[data-v-374685a9] {\n  flex-grow: 100;\n}\n.h-12[data-v-374685a9] {\n  height: 3.6rem;\n}\n.mobile-footer[data-v-374685a9] {\n  box-shadow:         0px -2px 5px 0px rgba(50, 50, 50, 0.27);\n}\n.menu a[data-v-374685a9] {\n  border-bottom: 2px solid #fff;\n}\n.menu a[data-v-374685a9]:not(.router-link-exact-active):hover {\n  border-bottom: 2px solid #f7fafc;\n}\n.menu .router-link-exact-active[data-v-374685a9] {\n  border-bottom: 2px solid #000;\n}\n.bottom-menu >div[data-v-374685a9] {\n  text-align: right;\n  width: 100%;\n}\n.bottom-menu >div[data-v-374685a9]:first-child {\n  text-align: left;\n}\n@media (max-width: 400px) {\nbutton.px-4[data-v-374685a9] {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.logo[data-v-374685a9] {\n    min-width: 45px;\n}\n.logi img[data-v-374685a9] {\n    margin: 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -33326,7 +33326,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "w-48 sm:w-64 lg:h-12 h-10 border border-gray-400 py-1 px-2 rounded text-lg focus:outline-none focus:border-blue-500 focus:shadow focus:bg-gray-100 float-left",
+                  "w-48 sm:w-64 lg:h-12 h-10 border border-gray-400 py-1 px-2 rounded text-lg focus:outline-none focus:border-blue-500 focus:shadow focus:bg-gray-100 float-left input",
                 attrs: {
                   type: "text",
                   name: "word",
