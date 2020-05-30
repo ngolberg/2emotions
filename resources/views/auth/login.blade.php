@@ -11,7 +11,7 @@
 
             <div class="pt-3 mb-4 text-center">
                 <script src="//ulogin.ru/js/ulogin.js"></script>
-                <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=email,first_name;providers=facebook,twitter,google,vkontakte;hidden=;redirect_uri=http%3A%2F%2F2emotions.local%2Fulogin;mobilebuttons=0;"></div>
+                <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=email,first_name;providers=facebook,twitter,google,vkontakte;hidden=;redirect_uri={{ urlencode(config('app.url')) }}%2Fulogin;mobilebuttons=0;"></div>
             </div>
 
             <div class="relative">

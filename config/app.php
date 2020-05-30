@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://2emotions.local'),
+    'url' => env('APP_URL', 'http://2emotions.ru'),
 
     'asset_url' => env('ASSET_URL', null),
 
