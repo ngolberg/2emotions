@@ -12,7 +12,7 @@
           <div v-if="submiting" class="submiting"></div>
           <a href="/login" v-if="!user" class="block absolute top-0 bottom-0 right-0 left-0 bg-black opacity-0"></a>
           <input type="text" name="word" v-model="form.word" @input="updateField()" :placeholder="__('Who/what?')" class="w-48 sm:w-64 lg:h-12 h-10 border border-gray-400 py-1 px-2 rounded text-lg focus:outline-none focus:border-blue-500 focus:shadow focus:bg-gray-100 float-left input" autocomplete="off" maxlength="32"/>
-          <button name="type" type="submit" @click="form.type=0" v-touch="submitForm" value="0" class="bg-heart-color lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-red-500 focus:outline-none">
+          <button name="type" type="submit"  v-touch="submitForm" value="0" class="bg-heart-color lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-red-500 focus:outline-none">
             <svg class="float-left md:mr-1" fill="#FFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.804,43.648L24,44l-0.804-0.352C12.862,37.313,2,22.893,2,14.884  C2.035,8.326,7.404,3.002,14,3.002c4.169,0,7.849,2.128,10,5.349c2.151-3.221,5.831-5.349,10-5.349c6.596,0,11.965,5.324,12,11.882  C46,22.893,35.138,37.313,24.804,43.648z M34,4.993c-3.354,0-6.469,1.667-8.335,4.46L24,11.946l-1.665-2.494  C20.469,6.66,17.354,4.993,14,4.993c-5.484,0-9.971,4.442-10,9.891c0,7.064,10.234,20.808,20,26.917  c9.766-6.109,20-19.852,20-26.907C43.971,9.435,39.484,4.993,34,4.993z"/></svg>
             <span class="hidden md:inline">{{ __('I love you!') }}</span></button>
           <button name="type" type="submit" @click="form.type=1" v-touch="submitForm" value="1" class="bg-gray-800 lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-gray-900 focus:outline-none">
@@ -140,9 +140,14 @@
             },
 
             submitForm: function (event) {
-                //this.form.type = event.submitter.value;
                 if (this.submiting) {
                     return false;
+                }
+
+                if (event.target.tagName == 'BUTTON') {
+                    this.form.type = event.target.value;
+                } else {
+                    this.form.type = $(event.target).parent('button').attr('value');
                 }
 
                 this.searchResultsShow = false;

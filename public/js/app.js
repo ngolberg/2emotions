@@ -3386,9 +3386,14 @@ __webpack_require__.r(__webpack_exports__);
     submitForm: function submitForm(event) {
       var _this2 = this;
 
-      //this.form.type = event.submitter.value;
       if (this.submiting) {
         return false;
+      }
+
+      if (event.target.tagName == 'BUTTON') {
+        this.form.type = event.target.value;
+      } else {
+        this.form.type = $(event.target).parent('button').attr('value');
       }
 
       this.searchResultsShow = false;
@@ -33375,12 +33380,7 @@ var render = function() {
                   ],
                   staticClass:
                     "bg-heart-color lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-red-500 focus:outline-none",
-                  attrs: { name: "type", type: "submit", value: "0" },
-                  on: {
-                    click: function($event) {
-                      _vm.form.type = 0
-                    }
-                  }
+                  attrs: { name: "type", type: "submit", value: "0" }
                 },
                 [
                   _c(
