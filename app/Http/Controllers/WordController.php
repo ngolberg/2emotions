@@ -23,7 +23,7 @@ class WordController extends Controller
             $query->where('user_id', $user_id);
         }
         if ($page > 1) {
-            $query->offset($this->perPage * $page);
+            $query->offset($this->perPage * ($page - 1));
         }
         $query->orderBy($sortField, 'desc')->limit($this->perPage);
 
