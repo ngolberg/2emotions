@@ -3387,6 +3387,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       //this.form.type = event.submitter.value;
+      if (this.submiting) {
+        return false;
+      }
+
       this.searchResultsShow = false;
       this.submiting = true;
       axios.post('/api/words', this.form).then(function (response) {

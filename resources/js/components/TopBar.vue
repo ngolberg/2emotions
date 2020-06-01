@@ -141,6 +141,10 @@
 
             submitForm: function (event) {
                 //this.form.type = event.submitter.value;
+                if (this.submiting) {
+                    return false;
+                }
+
                 this.searchResultsShow = false;
                 this.submiting = true;
 
