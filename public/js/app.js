@@ -3385,7 +3385,7 @@ __webpack_require__.r(__webpack_exports__);
     submitForm: function submitForm(event) {
       var _this2 = this;
 
-      this.form.type = event.submitter.value;
+      //this.form.type = event.submitter.value;
       this.searchResultsShow = false;
       axios.post('/api/words', this.form).then(function (response) {
         _this2.form.word = '';
@@ -33353,9 +33353,22 @@ var render = function() {
               _c(
                 "button",
                 {
+                  directives: [
+                    {
+                      name: "touch",
+                      rawName: "v-touch",
+                      value: _vm.submitForm,
+                      expression: "submitForm"
+                    }
+                  ],
                   staticClass:
                     "bg-heart-color lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-red-500 focus:outline-none",
-                  attrs: { name: "type", type: "submit", value: "0" }
+                  attrs: { name: "type", type: "submit", value: "0" },
+                  on: {
+                    click: function($event) {
+                      _vm.form.type = 0
+                    }
+                  }
                 },
                 [
                   _c(
@@ -33398,9 +33411,22 @@ var render = function() {
               _c(
                 "button",
                 {
+                  directives: [
+                    {
+                      name: "touch",
+                      rawName: "v-touch",
+                      value: _vm.submitForm,
+                      expression: "submitForm"
+                    }
+                  ],
                   staticClass:
                     "bg-gray-800 lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-gray-900 focus:outline-none",
-                  attrs: { name: "type", type: "submit", value: "1" }
+                  attrs: { name: "type", type: "submit", value: "1" },
+                  on: {
+                    click: function($event) {
+                      _vm.form.type = 1
+                    }
+                  }
                 },
                 [
                   _c(
