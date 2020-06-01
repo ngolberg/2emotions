@@ -3337,6 +3337,7 @@ __webpack_require__.r(__webpack_exports__);
         'word': '',
         'type': 0
       },
+      submiting: false,
       searchResults: [],
       searchResultsShow: false,
       errors: null,
@@ -3387,11 +3388,14 @@ __webpack_require__.r(__webpack_exports__);
 
       //this.form.type = event.submitter.value;
       this.searchResultsShow = false;
+      this.submiting = true;
       axios.post('/api/words', this.form).then(function (response) {
         _this2.form.word = '';
+        _this2.submiting = false;
 
         _this2.$router.push(response.data.links.self);
       })["catch"](function (errors) {
+        _this2.submiting = false;
         _this2.errors = errors.response.data.errors;
       });
     },
@@ -3754,7 +3758,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".logo[data-v-374685a9] {\n  min-width: 59px;\n}\n.logo img[data-v-374685a9] {\n  height: 100%;\n}\n.form-wrapper[data-v-374685a9] {\n  flex-grow: 100;\n}\n.h-12[data-v-374685a9] {\n  height: 3.6rem;\n}\n.mobile-footer[data-v-374685a9] {\n  box-shadow:         0px -2px 5px 0px rgba(50, 50, 50, 0.27);\n}\n.menu a[data-v-374685a9] {\n  border-bottom: 2px solid #fff;\n}\n.menu a[data-v-374685a9]:not(.router-link-exact-active):hover {\n  border-bottom: 2px solid #f7fafc;\n}\n.menu .router-link-exact-active[data-v-374685a9] {\n  border-bottom: 2px solid #000;\n}\n.bottom-menu >div[data-v-374685a9] {\n  text-align: right;\n  width: 100%;\n}\n.bottom-menu >div[data-v-374685a9]:first-child {\n  text-align: left;\n}\n@media (max-width: 400px) {\nbutton.px-4[data-v-374685a9] {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.logo[data-v-374685a9] {\n    min-width: 45px;\n}\n.logo img[data-v-374685a9] {\n    margin: 0;\n}\n}\n", ""]);
+exports.push([module.i, ".logo[data-v-374685a9] {\n  min-width: 59px;\n}\n.logo img[data-v-374685a9] {\n  height: 100%;\n}\n.form-wrapper[data-v-374685a9] {\n  flex-grow: 100;\n}\n.h-12[data-v-374685a9] {\n  height: 3.6rem;\n}\n.mobile-footer[data-v-374685a9] {\n  box-shadow:         0px -2px 5px 0px rgba(50, 50, 50, 0.27);\n}\n.menu a[data-v-374685a9] {\n  border-bottom: 2px solid #fff;\n}\n.menu a[data-v-374685a9]:not(.router-link-exact-active):hover {\n  border-bottom: 2px solid #f7fafc;\n}\n.menu .router-link-exact-active[data-v-374685a9] {\n  border-bottom: 2px solid #000;\n}\n.bottom-menu >div[data-v-374685a9] {\n  text-align: right;\n  width: 100%;\n}\n.bottom-menu >div[data-v-374685a9]:first-child {\n  text-align: left;\n}\n@media (max-width: 400px) {\nbutton.px-4[data-v-374685a9] {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.logo[data-v-374685a9] {\n    min-width: 45px;\n}\n.logo img[data-v-374685a9] {\n    margin: 0;\n}\n}\n.submiting[data-v-374685a9] {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background: rgba(237,242,247,0.5);\n}\n", ""]);
 
 // exports
 
@@ -33308,6 +33312,10 @@ var render = function() {
               }
             },
             [
+              _vm.submiting
+                ? _c("div", { staticClass: "submiting" })
+                : _vm._e(),
+              _vm._v(" "),
               !_vm.user
                 ? _c("a", {
                     staticClass:
@@ -33484,7 +33492,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n        " + _vm._s(_vm.errorMessage()) + "\n      "
+                        "\n          " +
+                          _vm._s(_vm.errorMessage()) +
+                          "\n        "
                       )
                     ]
                   )
@@ -33518,9 +33528,9 @@ var render = function() {
                               _c("div", { staticClass: "flex items-center" }, [
                                 _c("div", { staticClass: "pl-3" }, [
                                   _vm._v(
-                                    "\n                " +
+                                    "\n                  " +
                                       _vm._s(result.data.word) +
-                                      "\n              "
+                                      "\n                "
                                   )
                                 ])
                               ])
