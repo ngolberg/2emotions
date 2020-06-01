@@ -16,15 +16,10 @@
                     <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=email,first_name;providers=facebook,twitter,google,vkontakte;hidden=;redirect_uri={{ urlencode(config('app.url')) }}%2Fulogin;mobilebuttons=0;"></div>
                 </div>
 
-                <div class="relative">
-                    <label for="name" class="text-blue-500 text-xs font-bold pl-3 pt-2 absolute uppercase">{{ _('') }}Full Name</label>
-
-                    <input id="name" type="text" class="w-full p-3 pt-8 rounded focus:outline-none focus:bg-blue-700 bg-blue-800 text-gray-100 @error('name') border border-red-600 @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Your Name">
-
                     @error('name')
                     <span class="text-red-600 text-xs" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
-                </div>
+
 
                 <div class="relative pt-3">
                     <label for="email" class="text-blue-500 text-xs font-bold pl-3 pt-2 absolute uppercase">{{ _('E-Mail') }}</label>
@@ -46,18 +41,11 @@
                     @enderror
                 </div>
 
-                <div class="relative pt-3">
-                    <label for="password-confirm" class="text-blue-500 text-xs font-bold pl-3 pt-2 absolute uppercase">{{ _('Re-enter Password') }}</label>
-
-                    <input id="password-confirm" type="password" class="w-full p-3 pt-8 rounded focus:outline-none focus:bg-blue-700 bg-blue-800 text-gray-100" name="password_confirmation" required placeholder="Confirm">
-                </div>
-
                 <div class="pt-6">
                     <button type="submit" class="w-full rounded py-2 px-3 uppercase text-left bg-gray-400 text-blue-800 text-gray-100 font-bold">{{ _('Register') }}</button>
                 </div>
 
                 <div class="pt-8 flex justify-between text-white text-sm font-bold">
-                    <a class="hover:text-blue-200" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                     <a class="hover:text-blue-200" href="{{ route('login') }}">{{ _('Login') }}</a>
                 </div>
             </form>

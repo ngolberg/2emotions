@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <input type="hidden" name="remember" value="1"/>
+            <input type="checkbox" name="remember" value="1" checked class="hidden"/>
 
             <div class="pt-8">
                 <button type="submit"
@@ -48,9 +48,9 @@
             </div>
 
             <div class="flex justify-between pt-8 text-white text-sm font-bold">
-                <a class="hover:text-blue-200" href="{{ route('password.request') }}">
+                <!--a class="hover:text-blue-200" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
-                </a>
+                </a-->
                 <a class="hover:text-blue-200" href="{{ route('register') }}">
                     {{ __('Register') }}
                 </a>

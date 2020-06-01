@@ -53,7 +53,7 @@ class UloginController extends RegisterController
             ]);
         }
 
-        if (Auth::attempt(['email'=>$user['email'], 'password' => $password])) {
+        if (Auth::attempt(['email'=>$user['email'], 'password' => $password], true)) {
             $url = '/';
             if (isset($_COOKIE['redirect']) && filter_var($_COOKIE['redirect'], FILTER_VALIDATE_URL)) {
                 $url = $_COOKIE['redirect'];
