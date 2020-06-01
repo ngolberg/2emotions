@@ -33300,6 +33300,7 @@ var render = function() {
             "form",
             {
               staticClass: "inline-block relative",
+              attrs: { id: "mainForm" },
               on: {
                 submit: function($event) {
                   $event.preventDefault()
@@ -33353,17 +33354,14 @@ var render = function() {
               _c(
                 "button",
                 {
-                  directives: [
-                    {
-                      name: "touch",
-                      rawName: "v-touch",
-                      value: _vm.submitForm,
-                      expression: "submitForm"
-                    }
-                  ],
                   staticClass:
                     "bg-heart-color lg:h-12 h-10 py-1 px-4 ml-2 text-white text-lg rounded hover:bg-red-500 focus:outline-none",
-                  attrs: { name: "type", value: "0" }
+                  attrs: {
+                    name: "type",
+                    type: "submit",
+                    form: "mainForm",
+                    value: "0"
+                  }
                 },
                 [
                   _c(
