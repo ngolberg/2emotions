@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Word;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Word as WordResource;
 
 class AppController extends Controller
 {
@@ -23,6 +25,19 @@ class AppController extends Controller
      */
     public function index()
     {
-        return view('index', ['isAdmin' => Auth::check()?(request()->user()->isAdmin()?'true':'false'):'false']);
+        return view('index', ['title' => $this->getTitle(), 'isAdmin' => Auth::check()?(request()->user()->isAdmin()?'true':'false'):'false']);
+    }
+
+    private function getTitle() {
+        $url = \Request::getRequestUri();
+        if (preg_match("(^/(word)/(\d+)$)i", $url, $matches)) {
+            $word_id = $matches[2];
+            $word = new WordResource(Word::find($word_id));
+            $result = $word->word . ', ' . ($word->type == Word::$loveType ? __('I love you!') : __('fuck off!'));
+
+            return $result;
+        }
+
+        return 'Love or hate? | 2emotions';
     }
 }

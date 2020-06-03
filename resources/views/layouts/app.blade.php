@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>2emotions</title>
+    <title>{{ $title }}</title>
     <meta property="og:title" content="" />
     <meta property="og:image" content="/img/logo.png" />
 
