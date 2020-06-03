@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Word;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\Word as WordResource;
 
