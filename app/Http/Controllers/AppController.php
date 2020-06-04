@@ -30,16 +30,22 @@ class AppController extends Controller
     }
 
     private function getTitle() {
+        $result = 'Love or hate? | 2emotions';
         $url = \Request::getRequestUri();
         if (preg_match("(^/(word)/(\d+)$)i", $url, $matches)) {
             $word_id = $matches[2];
-            $word = new WordResource(Word::find($word_id));
-            $l = __('I love you!');
-            $result = $word->word . ', ' . ($word->type == Word::$loveType ? __('I love you!') : __('fuck off!'));
+            try {
+                $word = new WordResource(Word::find($word_id));
+                $l = __('I love you!');
+                $result = $word->word . ', ' . ($word->type == Word::$loveType ? __('I love you!') : __('fuck off!'));
+            }
+            catch (\Exception $e) {
+                return $result;
+            }
 
             return $result;
         }
 
-        return 'Love or hate? | 2emotions';
+        return $result;
     }
 }
