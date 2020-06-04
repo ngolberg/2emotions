@@ -34,6 +34,7 @@ class AppController extends Controller
         if (preg_match("(^/(word)/(\d+)$)i", $url, $matches)) {
             $word_id = $matches[2];
             $word = new WordResource(Word::find($word_id));
+            $l = __('I love you!');
             $result = $word->word . ', ' . ($word->type == Word::$loveType ? __('I love you!') : __('fuck off!'));
 
             return $result;
