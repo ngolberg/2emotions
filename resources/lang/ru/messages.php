@@ -19,4 +19,5 @@
         'We are not going to display your name. We just need to know that you are not a robot.' => 'Мы не будем отображать Ваше имя, просто хотим убедиться, что пишет Вы - не робот.',
         'Welcome!' => 'Заходи!',
         'Still empty. Send something first.' => 'Пока пусто, напиши первым.',
+        'Copy the link' => 'Скопировать ссылку',
     ];

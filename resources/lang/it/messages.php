@@ -17,4 +17,5 @@
         'My list' => 'La mia lista',
         'We are not going to display your name. We just need to know that you are not a robot.' => 'Non mostreremo il tuo nome. Dobbiamo solo sapere che non sei un robot.',
         'Still empty. Send something first.' => 'Ancora vuoto Invia prima qualcosa.',
+        'Copy the link' => 'Copia il link',
     ];

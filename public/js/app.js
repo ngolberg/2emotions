@@ -3489,6 +3489,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -3562,6 +3564,16 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         alert('Internal Error. Unable to delete a word.');
       });
+    },
+    copyLink: function copyLink() {
+      var copyText = document.createElement('input'),
+          text = window.location.href;
+      document.body.appendChild(copyText);
+      copyText.value = text;
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      document.body.removeChild(copyText);
     }
   },
   computed: {
@@ -33832,6 +33844,15 @@ var render = function() {
             _c(
               "vue-yandex-share",
               _vm._b({}, "vue-yandex-share", _vm.share, false)
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "text-gray-600 text-sm underline",
+                on: { click: _vm.copyLink }
+              },
+              [_vm._v(_vm._s(_vm.__("Copy the link")))]
             ),
             _vm._v(" "),
             _vm.is_admin || _vm.user.id == _vm.word.data.user_id

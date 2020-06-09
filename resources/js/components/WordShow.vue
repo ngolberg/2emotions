@@ -9,6 +9,8 @@
 
       <vue-yandex-share v-bind="share"></vue-yandex-share>
 
+      <a class="text-gray-600 text-sm underline" @click="copyLink">{{ __('Copy the link') }}</a>
+
       <div v-if="is_admin || user.id == word.data.user_id" class="relative">
         <button name="type" value="0" class="bg-red-400 text-sm py-1 px-4 ml-2 text-white rounded hover:bg-red-500" @click="modal = ! modal">
           {{ __('Delete') }}
@@ -120,6 +122,16 @@
                   .catch(error => {
                       alert('Internal Error. Unable to delete a word.');
                   });
+          },
+          copyLink: function() {
+              var copyText = document.createElement('input'),
+                  text = window.location.href;
+              document.body.appendChild(copyText);
+              copyText.value = text;
+              copyText.select();
+              copyText.setSelectionRange(0, 99999);
+              document.execCommand('copy');
+              document.body.removeChild(copyText);
           }
       },
 

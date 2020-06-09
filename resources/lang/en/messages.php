@@ -19,4 +19,5 @@
         'We are not going to display your name. We just need to know that you are not a robot.' => 'We are not going to display your name. We just need to know that you are not a robot.',
         'Welcome!' => 'Welcome!',
         'Still empty. Send something first.' => 'Still empty. Send something first.',
+        'Copy the link' => 'Copy the link',
     ];
