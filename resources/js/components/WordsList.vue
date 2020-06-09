@@ -6,7 +6,7 @@
       <div v-if="words.data.length">
         <div class="overflow-hidden text-center">
           <div v-for="word in words.data" class="inline-block lg:ml-6 lg:mr-6 ml-4 mr-4 mt-2 mb-2 relative">
-            <router-link :to="'/word/' + word.data.word_id" :class="'lg:text-5xl text-3xl text-' + wordColor(word.data.type) + ' ' + wordFont()">
+            <router-link :to="'/word/' + word.data.word_id" :class="'lg:text-5xl text-2xl text-' + wordColor(word.data.type) + ' ' + wordFont()">
                 {{ word.data.word }}, {{ __(wordType(word.data.type)) }}
             </router-link>
             <Likes :word_id="word.data.word_id" :rate="word.data.rate" :liked="word.liked" :user="user" :type="wordTypeClass(word.data.type)"/>

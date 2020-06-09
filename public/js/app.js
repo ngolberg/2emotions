@@ -33973,7 +33973,7 @@ var render = function() {
                           "router-link",
                           {
                             class:
-                              "lg:text-5xl text-3xl text-" +
+                              "lg:text-5xl text-2xl text-" +
                               _vm.wordColor(word.data.type) +
                               " " +
                               _vm.wordFont(),
