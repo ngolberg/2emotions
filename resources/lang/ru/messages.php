@@ -20,4 +20,5 @@
         'Welcome!' => 'Заходи!',
         'Still empty. Send something first.' => 'Пока пусто, напиши первым.',
         'Copy the link' => 'Скопировать ссылку',
+        'Copied!' => 'Скопировано!',
     ];

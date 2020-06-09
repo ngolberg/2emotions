@@ -9,7 +9,8 @@
 
       <vue-yandex-share v-bind="share"></vue-yandex-share>
 
-      <a class="text-gray-600 text-sm underline" @click="copyLink">{{ __('Copy the link') }}</a>
+      <a class="text-gray-600 text-sm underline cursor-pointer" @click="copyLink" v-if="!linkCopied">{{ __('Copy the link') }}</a>
+      <span class="text-gray-600 text-sm" @click="copyLink" v-if="linkCopied">{{ __('Copied!') }}</span>
 
       <div v-if="is_admin || user.id == word.data.user_id" class="relative">
         <button name="type" value="0" class="bg-red-400 text-sm py-1 px-4 ml-2 text-white rounded hover:bg-red-500" @click="modal = ! modal">
@@ -46,6 +47,7 @@
               loading: true,
               modal: false,
               word: null,
+              linkCopied: false,
               share: {
                   accessToken: null,
                   bare: false,
@@ -132,6 +134,7 @@
               copyText.setSelectionRange(0, 99999);
               document.execCommand('copy');
               document.body.removeChild(copyText);
+              this.linkCopied = true;
           }
       },
 

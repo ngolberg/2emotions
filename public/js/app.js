@@ -3491,6 +3491,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -3504,6 +3505,7 @@ __webpack_require__.r(__webpack_exports__);
       loading: true,
       modal: false,
       word: null,
+      linkCopied: false,
       share: {
         accessToken: null,
         bare: false,
@@ -3574,6 +3576,7 @@ __webpack_require__.r(__webpack_exports__);
       copyText.setSelectionRange(0, 99999);
       document.execCommand('copy');
       document.body.removeChild(copyText);
+      this.linkCopied = true;
     }
   },
   computed: {
@@ -33846,14 +33849,28 @@ var render = function() {
               _vm._b({}, "vue-yandex-share", _vm.share, false)
             ),
             _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "text-gray-600 text-sm underline",
-                on: { click: _vm.copyLink }
-              },
-              [_vm._v(_vm._s(_vm.__("Copy the link")))]
-            ),
+            !_vm.linkCopied
+              ? _c(
+                  "a",
+                  {
+                    staticClass:
+                      "text-gray-600 text-sm underline cursor-pointer",
+                    on: { click: _vm.copyLink }
+                  },
+                  [_vm._v(_vm._s(_vm.__("Copy the link")))]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.linkCopied
+              ? _c(
+                  "span",
+                  {
+                    staticClass: "text-gray-600 text-sm",
+                    on: { click: _vm.copyLink }
+                  },
+                  [_vm._v(_vm._s(_vm.__("Copied!")))]
+                )
+              : _vm._e(),
             _vm._v(" "),
             _vm.is_admin || _vm.user.id == _vm.word.data.user_id
               ? _c("div", { staticClass: "relative" }, [

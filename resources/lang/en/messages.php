@@ -20,4 +20,5 @@
         'Welcome!' => 'Welcome!',
         'Still empty. Send something first.' => 'Still empty. Send something first.',
         'Copy the link' => 'Copy the link',
+        'Copied!' => 'Copied!',
     ];

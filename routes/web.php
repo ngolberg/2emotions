@@ -9,7 +9,7 @@ Route::get('/logout-manual', function () {
 Route::post('/ulogin', 'UloginController@auth');
 
 // Localization
-//Cache::flush();
+// Cache::flush();
 $lang = config('app.locale');
 Route::get('/{lang}/js/lang.js', function ($lang) {
     $strings = Cache::rememberForever('lang.js?' . $lang, function () use ($lang) {
