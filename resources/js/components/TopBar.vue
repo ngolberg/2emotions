@@ -111,7 +111,7 @@
                     return;
                 }
 
-                axios.post('/api/search', {searchTerm: this.form.word})
+                axios.get('/api/search?searchTerm=' + this.form.word)
                     .then(response => {
                         if (this.form.word.length < 3) {
                             return false;

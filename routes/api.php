@@ -31,4 +31,4 @@ Route::get('/word/{word}', 'WordController@show');
 
 Route::patch('/lang/{lang}', 'LanguageController@update');
 
-Route::post('search', 'SearchController@index');
+Route::get('search', 'SearchController@index');

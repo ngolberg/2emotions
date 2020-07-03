@@ -30,7 +30,8 @@
                 (config) => {
                     if (typeof this.user.api_token !== 'undefined') {
                         if (config.method === 'get') {
-                            config.url = config.url + '?api_token=' + this.user.api_token;
+                            let sign = config.url.indexOf('?')==-1 ? '?' : '&';
+                            config.url = config.url + sign + 'api_token=' + this.user.api_token;
                         } else {
                             config.data = {
                                 ...config.data,

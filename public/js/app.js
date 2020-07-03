@@ -3140,7 +3140,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     window.axios.interceptors.request.use(function (config) {
       if (typeof _this.user.api_token !== 'undefined') {
         if (config.method === 'get') {
-          config.url = config.url + '?api_token=' + _this.user.api_token;
+          var sign = config.url.indexOf('?') == -1 ? '?' : '&';
+          config.url = config.url + sign + 'api_token=' + _this.user.api_token;
         } else {
           config.data = _objectSpread({}, config.data, {
             api_token: _this.user.api_token
@@ -3358,9 +3359,7 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      axios.post('/api/search', {
-        searchTerm: this.form.word
-      }).then(function (response) {
+      axios.get('/api/search?searchTerm=' + this.form.word).then(function (response) {
         if (_this.form.word.length < 3) {
           return false;
         }
